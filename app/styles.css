@@ -1,0 +1,355 @@
+:root {
+    --bg: #090b17;
+    --surface: #111827;
+    --surface-alt: #161f3a;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --primary: #38bdf8;
+    --primary-dark: #0b69a4;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --border: rgba(148, 163, 184, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, system-ui, sans-serif;
+    background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 35%),
+        linear-gradient(180deg, #040714 0%, #090b17 100%);
+    color: var(--text);
+}
+
+body a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.page-shell,
+.app-shell,
+.form-shell {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 20px 40px;
+}
+
+.hero-card,
+.card,
+.form-shell {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.hero-card h1,
+.form-shell h1,
+.app-header h1 {
+    margin: 0 0 12px;
+    font-size: 2.5rem;
+}
+
+.hero-card p,
+.form-shell p,
+.card p,
+.profile-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.card form,
+.form-shell form {
+    margin-top: 16px;
+}
+
+.card label,
+.form-shell label {
+    display: block;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    background: linear-gradient(180deg, rgba(8, 14, 32, 0.97), rgba(10, 17, 38, 0.93));
+    color: var(--text);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+    transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    font-size: 0.98rem;
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: rgba(56, 189, 248, 0.24);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: rgba(56, 189, 248, 0.85);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14), inset 0 1px 2px rgba(0, 0, 0, 0.4);
+    background: rgba(8, 14, 32, 1);
+    transform: translateY(-1px);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(226, 232, 240, 0.3);
+}
+
+.button-row,
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.primary-btn,
+.secondary-btn,
+.danger-btn,
+button {
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    padding: 14px 20px;
+    font-weight: 600;
+}
+
+.primary-btn,
+button.primary-btn,
+button[type="submit"] {
+    background: linear-gradient(135deg, var(--primary), #60a5fa);
+    color: #04111f;
+}
+
+.secondary-btn,
+button.secondary-btn {
+    background: rgba(148, 163, 184, 0.14);
+    color: var(--text);
+}
+
+.danger-btn {
+    background: rgba(239, 68, 68, 0.16);
+    color: var(--danger);
+}
+
+.alert {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 16px;
+    border-radius: 16px;
+    color: var(--text);
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.08);
+    border-color: rgba(34, 197, 94, 0.25);
+}
+
+.form-shell {
+    width: min(560px, 100%);
+}
+
+.form-shell label {
+    display: block;
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.small-text {
+    margin-top: 18px;
+    color: var(--muted);
+}
+
+.feature-cards,
+.stats-panel,
+.grid-two,
+.profile-stats {
+    display: grid;
+    gap: 18px;
+}
+
+.feature-cards {
+    margin-top: 28px;
+}
+
+.feature-card,
+.stat-card,
+.highlight-card,
+.profile-card,
+.profile-info,
+.task-list-card {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 22px;
+}
+
+.feature-card h2,
+.stat-card h2,
+.card-header h2,
+.profile-card h2 {
+    margin-top: 0;
+}
+
+.feature-card p,
+.stat-card p,
+.profile-card p,
+.profile-info p,
+.task-card p {
+    margin: 0;
+}
+
+.stats-panel {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin-bottom: 24px;
+}
+
+.grid-two {
+    grid-template-columns: 1.4fr 1fr;
+    margin-bottom: 24px;
+}
+
+.app-header,
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.task-list-card {
+    padding: 18px;
+}
+
+.task-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.task-card {
+    background: rgba(15, 23, 42, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 18px;
+    padding: 18px;
+}
+
+.task-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.task-card h3 {
+    margin: 0 0 10px;
+}
+
+.task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+.task-meta span {
+    background: rgba(148, 163, 184, 0.08);
+    padding: 8px 12px;
+    border-radius: 999px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.inline-form {
+    display: inline;
+    margin: 0;
+}
+
+.priority {
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.priority.high {
+    background: rgba(248, 113, 113, 0.16);
+    color: #f87171;
+}
+
+.priority.medium {
+    background: rgba(251, 191, 36, 0.16);
+    color: #fbbf24;
+}
+
+.priority.low {
+    background: rgba(52, 211, 153, 0.16);
+    color: #34d399;
+}
+
+.focus-title {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+}
+
+.profile-stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    margin-top: 22px;
+}
+
+.profile-stats div {
+    background: rgba(15, 23, 42, 0.98);
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+}
+
+.profile-stats strong {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+
+.profile-info ul {
+    padding-left: 18px;
+    color: var(--muted);
+}
+
+.profile-info li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 860px) {
+    .grid-two,
+    .stats-panel,
+    .feature-cards,
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+}
