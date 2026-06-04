@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  web:
+    image: petya103/timetrim-web:latest
+    container_name: timetrim-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/html
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_NAME: timetask
+      DB_USER: root
+      DB_PASS: 1234
+
+  db:
+    image: mysql:8.0
+    container_name: timetrim-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: timetask
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./app/timetask_schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
+    ports:
+      - "3307:3306"
+
+volumes:
+  mysql_data:
